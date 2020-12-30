@@ -10,19 +10,13 @@ public class IngresoPersona1 extends JFrame {
 
 	private JPanel panel;
 	private JTextField tbNombre;
-	private JComboBox cmbNacionalidad;
+	private JComboBox cmbCiudad;
 	private ButtonGroup grupo;
 	private JRadioButton rdbtnFemenino;
 	private JRadioButton rdbtnMasculino;
 	private JButton btnAceptar;
 	private JButton btnLimpiar;
 	private JPanel pnlSexo;
-	private JTextField tbApellido;
-	private JLabel lblCursos;
-	private JCheckBox chckbxNet;
-	private JCheckBox checkBox;
-	private JCheckBox chckbxRedes;
-	private JCheckBox chckbxJava;
 	
 
 	public IngresoPersona1() {
@@ -34,7 +28,7 @@ public class IngresoPersona1 extends JFrame {
 	private void iniciarComponentes() {
 		
 		setTitle("Formulario de Personas");
-		setSize(310, 495);
+		setSize(263, 264);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,46 +44,42 @@ public class IngresoPersona1 extends JFrame {
 		panel.add(lblIngresoDeDatos);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setBounds(24, 50, 64, 14);
+		lblNombre.setBounds(5, 50, 64, 14);
 		panel.add(lblNombre);
 		
-		JLabel lblNacionalidad = new JLabel("Nacionalidad");
-		lblNacionalidad.setBounds(24, 223, 64, 14);
-		panel.add(lblNacionalidad);
-		
-		JLabel lblApellido = new JLabel("Apellido:");
-		lblApellido.setBounds(24, 89, 56, 16);
-		panel.add(lblApellido);
+		JLabel lblCiudad = new JLabel("Ciudad:");
+		lblCiudad.setBounds(5, 90, 64, 14);
+		panel.add(lblCiudad);
 		
 		tbNombre = new JTextField();
-		tbNombre.setBounds(115, 47, 155, 20);
+		tbNombre.setBounds(79, 47, 155, 20);
 		panel.add(tbNombre);
 				
-		cmbNacionalidad = new JComboBox();
-		cmbNacionalidad.setToolTipText("");
-		cmbNacionalidad.setBounds(100, 220, 170, 20);
-		panel.add(cmbNacionalidad);
-		cmbNacionalidad.addItem(" ");
-		cmbNacionalidad.addItem("Las Piedras");
-		cmbNacionalidad.addItem("La Paz");
-		cmbNacionalidad.addItem("Canelones");
-		cmbNacionalidad.setModel(new DefaultComboBoxModel(new String[] {" ", "Vietnam", "Israel", "Mongolia"}));
-		cmbNacionalidad.setSelectedIndex(0);
+		cmbCiudad = new JComboBox();
+		cmbCiudad.setToolTipText("");
+		cmbCiudad.setBounds(79, 87, 155, 20);
+		panel.add(cmbCiudad);
+		cmbCiudad.addItem(" ");
+		cmbCiudad.addItem("Las Piedras");
+		cmbCiudad.addItem("La Paz");
+		cmbCiudad.addItem("Canelones");
+		cmbCiudad.setModel(new DefaultComboBoxModel(new String[] {" ", "Las Piedras", "La Paz", "Canelones"}));
+		cmbCiudad.setSelectedIndex(0);
 		
 		grupo=new ButtonGroup();
 		
 		btnLimpiar = new JButton("Limpiar");
-		btnLimpiar.setBounds(12, 424, 106, 23);
+		btnLimpiar.setBounds(5, 199, 106, 23);
 		panel.add(btnLimpiar);
 		
 		
 		btnAceptar = new JButton("Aceptar");
-		btnAceptar.setBounds(163, 424, 107, 23);
+		btnAceptar.setBounds(140, 199, 107, 23);
 		panel.add(btnAceptar);
 		
 		pnlSexo = new JPanel();
 		pnlSexo.setBorder(new TitledBorder(null, "Sexo:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlSexo.setBounds(24, 270, 246, 61);
+		pnlSexo.setBounds(5, 115, 242, 61);
 		panel.add(pnlSexo);
 		pnlSexo.setLayout(null);
 		rdbtnMasculino = new JRadioButton("Masculino");
@@ -102,35 +92,6 @@ public class IngresoPersona1 extends JFrame {
 		pnlSexo.add(rdbtnFemenino);
 		grupo.add(rdbtnFemenino);
 		
-		tbApellido = new JTextField();
-		tbApellido.setBounds(115, 86, 155, 22);
-		panel.add(tbApellido);
-		tbApellido.setColumns(10);
-		
-		chckbxNet = new JCheckBox(".Net");
-		chckbxNet.setBounds(104, 379, 56, 25);
-		panel.add(chckbxNet);
-		
-		checkBox = new JCheckBox("New check box");
-		checkBox.setBounds(171, 390, 21, -9);
-		panel.add(checkBox);
-		
-		chckbxRedes = new JCheckBox("Redes");
-		chckbxRedes.setBounds(181, 379, 79, 25);
-		panel.add(chckbxRedes);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(23, 344, 247, 69);
-		panel.add(scrollPane);
-		
-		lblCursos = new JLabel("Cursos: ");
-		scrollPane.setColumnHeaderView(lblCursos);
-		
-		chckbxJava = new JCheckBox("Java");
-		scrollPane.setRowHeaderView(chckbxJava);
-		
-
-		
 		
 }
 	private void iniciarManejadorEventos() {
@@ -138,14 +99,8 @@ public class IngresoPersona1 extends JFrame {
 		btnLimpiar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					tbNombre.setText("");
-					tbApellido.setText("");
-		  			cmbNacionalidad.setSelectedIndex(0);
-		  			grupo.clearSelection();
-		  			chckbxNet.setSelected(false);
-		  			chckbxRedes.setSelected(false);
-		  			chckbxJava.setSelected(false);
-		  			
-		  			
+		  			cmbCiudad.setSelectedIndex(0);
+		  			grupo.clearSelection();	
 		  			JOptionPane.showMessageDialog(null,"Quedo pronto","Datos Capturados",JOptionPane.INFORMATION_MESSAGE);
 				}
 	});
@@ -154,19 +109,11 @@ public class IngresoPersona1 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String resul;
 				
-				resul=tbNombre.getText()+" "+tbApellido.getText()+" "+cmbNacionalidad.getSelectedItem()+" ";
+				resul=tbNombre.getText()+ " "+cmbCiudad.getSelectedItem()+" ";
 				if (rdbtnFemenino.isSelected())
 					resul=resul+"Femenino";
 				else
 					resul=resul+"Masculino";
-				
-				if (chckbxJava.isSelected())
-					resul=resul+" "+"Java";
-				else if (chckbxNet.isSelected())
-					resul=resul+" "+".Net";
-				else
-					resul=resul+" "+"Redes";
-
 				JOptionPane.showMessageDialog(null,resul,"Datos capturados",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});

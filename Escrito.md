@@ -1,3 +1,5 @@
+https://docs.google.com/document/d/1tItZ2izOPmds7kmNoCtaAhMlY2OLVXYxmra5boKmVPM/edit?usp=sharing
+
 ### ESCRITO de PROGRAMACIÓN 2- GUI SWING
 
 ** Nota: En los dos ejercicios respetar las convenciones para todos los nombres de componentes que vaya a utilizar (1 pto)**

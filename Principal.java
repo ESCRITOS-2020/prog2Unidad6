@@ -1,5 +1,6 @@
-package presentacion;
+//package presentacion;
 
+import presentacion.IngresoPersona1;
 
 public class Principal {
 
